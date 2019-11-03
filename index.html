@@ -6,7 +6,39 @@
     <body>
         <script>
         
-        
+        function game()
+        {
+            let current_round
+            let player_wins = 0
+            let computer_wins = 0
+            console.log("Play Rock Paper Scissors against a bot, first to 5 wins.")
+            while(player_wins != 5 && computer_wins !=5)
+            {
+                current_round = playRound()
+                if(current_round == "win")
+                    {
+                        player_wins++
+                        console.log("The current score is, Player score: " + player_wins + " Computer score: " + computer_wins)
+                    }
+                else
+                    {
+                        computer_wins++
+                        console.log("The current score is, Player score: " + player_wins + " Computer score: " + computer_wins)
+                    }
+            }
+            if(player_wins == 5)
+            {
+                console.log("You have won this game!")
+            }
+            else
+            {
+                console.log("Better luck next time you loser!")
+            }
+
+
+
+
+        }
         function playRound()
         {
             let playerSelection = userPlay()
@@ -17,15 +49,18 @@
                     {
                         console.log("This round was a tie!")
                         
+                        
                     }
                     if(computerSelection == "paper")
                     {
                         console.log("The computer won this round!")
+                        return "loss"
                         
                     }
                     if(computerSelection == "scissors")
                     {
                         console.log("You win this round!")
+                        return "win"
                         
                     }
                 }
@@ -34,6 +69,7 @@
                  if(computerSelection == "rock")
                  {
                     console.log("You win this round!")
+                    return "win"
                     
                 }
                 if(computerSelection == "paper")
@@ -43,19 +79,22 @@
                 }
                 if(computerSelection == "scissors")
                 {
-                    console.log("The computer won this round!")                        
-                    }
+                    console.log("The computer won this round!")
+                    return "loss"                     
                 }
+            }
             if(playerSelection == "scissors")
             {
                  if(computerSelection == "rock")
                  {
                     console.log("The computer won this round!")
+                    return "loss"
                     
                 }
                 if(computerSelection == "paper")
                 {                        
                     console.log("You win this round!")
+                    return "win"
                        
                 }
                 if(computerSelection == "scissors")
