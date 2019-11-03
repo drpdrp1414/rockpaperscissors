@@ -7,14 +7,28 @@
         <script>
         function playRound()
         {
-
+            
         }
         function computerPlay()
         {
             let computer_choice = Math.floor(Math.random() * 3) + 1
-            
+            let computer_hand
+            switch(computer_choice){
+                case 1:
+                    computer_hand = "Rock"
+                    break;
+                case 2:
+                    computer_hand = "Paper"
+                    break;
+                case 3:
+                    computer_hand = "Scissors"
+                    break;
+            }
+            return computer_hand
 
         }
+
+
         </script>
     </body>
 </html>
