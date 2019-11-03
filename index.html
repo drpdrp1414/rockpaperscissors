@@ -5,26 +5,83 @@
     </head>
     <body>
         <script>
-        const  playerSelection = 
+        
+        
         function playRound()
         {
-            
+            let playerSelection = userPlay()
+            let computerSelection = computerPlay()
+            if(playerSelection == "rock")
+                {
+                    if(computerSelection == "rock")
+                    {
+                        console.log("This round was a tie!")
+                        
+                    }
+                    if(computerSelection == "paper")
+                    {
+                        console.log("The computer won this round!")
+                        
+                    }
+                    if(computerSelection == "scissors")
+                    {
+                        console.log("You win this round!")
+                        
+                    }
+                }
+            if(playerSelection == "paper")
+            {
+                 if(computerSelection == "rock")
+                 {
+                    console.log("You win this round!")
+                    
+                }
+                if(computerSelection == "paper")
+                {                        
+                    console.log("This round was a tie!")
+                       
+                }
+                if(computerSelection == "scissors")
+                {
+                    console.log("The computer won this round!")                        
+                    }
+                }
+            if(playerSelection == "scissors")
+            {
+                 if(computerSelection == "rock")
+                 {
+                    console.log("The computer won this round!")
+                    
+                }
+                if(computerSelection == "paper")
+                {                        
+                    console.log("You win this round!")
+                       
+                }
+                if(computerSelection == "scissors")
+                {
+                    console.log("This round was a tie!")                        
+                    }
+                }
+
         }
+
         function computerPlay()
         {
             let computer_choice = Math.floor(Math.random() * 3) + 1
             let computer_hand
             switch(computer_choice){
                 case 1:
-                    computer_hand = "Rock"
+                    computer_hand = "rock"
                     break;
                 case 2:
-                    computer_hand = "Paper"
+                    computer_hand = "paper"
                     break;
                 case 3:
-                    computer_hand = "Scissors"
+                    computer_hand = "scissors"
                     break;
             }
+            console.log("The computer has chosen " + computer_hand + "!")
             return computer_hand
 
         }
