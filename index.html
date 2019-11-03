@@ -5,6 +5,7 @@
     </head>
     <body>
         <script>
+        const  playerSelection = 
         function playRound()
         {
             
@@ -27,7 +28,21 @@
             return computer_hand
 
         }
-
+        function userPlay()
+        {
+            let user_choice = prompt("Do you choose rock, paper or scissors?")
+            user_choice = user_choice.toLowerCase()
+            if(user_choice == "rock" || user_choice == "paper" || user_choice == "scissors")
+            {
+                console.log("You have picked " + user_choice + "!")
+            }
+            else
+            {
+                console.log("Put in a real answer ya goober")
+                userPlay()
+            }
+            return user_choice
+        }
 
         </script>
     </body>
